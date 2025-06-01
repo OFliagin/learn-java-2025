@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- указываем родительский pom -->
+  <parent>
+    <groupId>com.example</groupId>
+    <artifactId>learn-java-2025</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>day-01-pattern-matching</artifactId>
+  <name>Day 01 – Pattern Matching</name>
+
+  <!-- для этого модуля используем JDK 24 -->
+  <properties>
+    <java.version>24</java.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- компиляция с флагом enable-preview -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <release>${java.version}</release>
+        </configuration>
+      </plugin>
+
+      <!-- тесты тоже запускаем с enable-preview -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
